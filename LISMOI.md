@@ -1,7 +1,7 @@
 > **Note**
 > Lien vers la version anglaise de lismoi en dessous
 
-https://github.com/8QED13y6/add-FQDN-to-ESXi-firewall/edit/main/LISMOI.md
+https://github.com/8QED13y6/add-FQDN-to-ESXi-firewall/edit/main/README.md
 
 # ESXiFQDNFirewallRuleSet
 
