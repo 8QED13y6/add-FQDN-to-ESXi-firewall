@@ -5,6 +5,8 @@ https://github.com/8QED13y6/add-FQDN-to-ESXi-firewall/blob/main/README.md
 
 # ESXiFQDNFirewallRuleSet
 
+## Execute.sh
+
 Ce code est un script en bash qui permet de mettre à jour la liste des adresses IP ou des noms de domaines (FQDN) autorisés à accéder à des serveurs VMware ESXi à travers le pare-feu de la machine. Le script contient trois fonctions :
 
 IP_LIST_TMP_Updater (): cette fonction met à jour la liste des adresses IP ou des noms de domaine dans un fichier temporaire, qui est ensuite utilisé pour mettre à jour le fichier principal. Si le dernier fichier temporaire existe toujours en raison d'une erreur, il est supprimé. Pour chaque ligne du fichier, la fonction vérifie si elle est un commentaire, et si ce n'est pas le cas, elle utilise nslookup pour obtenir l'adresse IP correspondante pour un nom de domaine, sinon elle utilise directement l'adresse IP. La fonction ajoute ensuite l'adresse IP ou le nom de domaine à la fin du fichier temporaire.
@@ -13,7 +15,7 @@ firewall_ruleset_allowedip_list (): cette fonction lit un fichier contenant une 
 
 IsTheNewListSameAsLastOne (): cette fonction vérifie si la nouvelle liste d'adresses IP ou de noms de domaine est identique à la liste précédente en calculant la somme de contrôle (checksum) de chaque fichier. Si les deux sommes de contrôle sont identiques, cela signifie que les deux fichiers sont identiques.
 
-# Local.conf
+## Local.conf
 
 Ce script est destiné à être exécuté sur une machine virtuelle VMware ESXi. Il ajoute des lignes à la crontab pour planifier des tâches à exécuter périodiquement.
 
@@ -31,7 +33,7 @@ La ligne "/usr/lib/vmware/busybox/bin/busybox crond" redémarre le service cron.
 
 Enfin, le script se termine avec "exit 0".
 
-# Cron
+## Cron
 
 Cette ligne est une tâche cron qui exécute un script shell /scratch/addFQDNtoESXifirewall/execute.sh toutes les minutes.
 
