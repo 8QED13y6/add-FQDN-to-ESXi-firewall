@@ -15,7 +15,7 @@ The third function, IsTheNewListSameAsLastOne, checks if the new list of IP addr
 
 Overall, this script appears to be designed to help automate the process of updating the IP address list for firewall rulesets on VMware ESXi hosts.
 
-#Local.conf
+# Local.conf
 
 This script is a shell script (using the /bin/sh interpreter) that appears to add some lines to the root user's crontab file and restart the crontab service.
 
