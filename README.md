@@ -14,3 +14,16 @@ The second function, firewall_ruleset_allowedip_list, takes two parameters: a fi
 The third function, IsTheNewListSameAsLastOne, checks if the new list of IP addresses is identical to the previous list by calculating the checksum of the ip.list and ip.list.tmp files. If the checksums are the same, it does nothing. If they are different, it moves the ip.list.tmp file to ip.list, updates the checksum, and logs the action.
 
 Overall, this script appears to be designed to help automate the process of updating the IP address list for firewall rulesets on VMware ESXi hosts.
+
+#Local.conf
+
+This script is a shell script (using the /bin/sh interpreter) that appears to add some lines to the root user's crontab file and restart the crontab service.
+
+The script starts by defining a variable "group" with the value "host/vim/vmvisor/boot".
+
+Next, there are several comments warning against making modifications to the script and explaining how the script is intended to be used in the ESXi operating system environment.
+
+After the comments, the script kills the existing crontab process, adds some lines to the root user's crontab file, and restarts the crontab service using the "busybox crond" command. Finally, the script exits with a status of 0.
+
+There are some additional comments at the end of the script with instructions on how to save and exit changes when using the vi or vim text editors.
+
