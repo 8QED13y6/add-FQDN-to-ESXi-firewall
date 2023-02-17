@@ -1,3 +1,10 @@
+> **Note**
+> Lien vers la version anglaise de lismoi en dessous
+
+https://github.com/8QED13y6/add-FQDN-to-ESXi-firewall/edit/main/LISMOI.md
+
+# ESXiFQDNFirewallRuleSet
+
 Ce code est un script en bash qui permet de mettre à jour la liste des adresses IP ou des noms de domaines (FQDN) autorisés à accéder à des serveurs VMware ESXi à travers le pare-feu de la machine. Le script contient trois fonctions :
 
 IP_LIST_TMP_Updater (): cette fonction met à jour la liste des adresses IP ou des noms de domaine dans un fichier temporaire, qui est ensuite utilisé pour mettre à jour le fichier principal. Si le dernier fichier temporaire existe toujours en raison d'une erreur, il est supprimé. Pour chaque ligne du fichier, la fonction vérifie si elle est un commentaire, et si ce n'est pas le cas, elle utilise nslookup pour obtenir l'adresse IP correspondante pour un nom de domaine, sinon elle utilise directement l'adresse IP. La fonction ajoute ensuite l'adresse IP ou le nom de domaine à la fin du fichier temporaire.
