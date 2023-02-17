@@ -1,5 +1,9 @@
-# ESXiFQDNFirewallRuleSet
+> **Note**
+> Link to the french version of readme bellow
 
+https://github.com/8QED13y6/add-FQDN-to-ESXi-firewall/edit/main/LISMOI.md
+
+# ESXiFQDNFirewallRuleSet
 
 This Bash script contains several functions that perform actions related to updating a list of IP addresses or FQDNs that are allowed to access various firewall rulesets on VMware ESXi hosts.
 
