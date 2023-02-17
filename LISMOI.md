@@ -13,3 +13,20 @@ firewall_ruleset_allowedip_list (): cette fonction lit un fichier contenant une 
 
 IsTheNewListSameAsLastOne (): cette fonction vérifie si la nouvelle liste d'adresses IP ou de noms de domaine est identique à la liste précédente en calculant la somme de contrôle (checksum) de chaque fichier. Si les deux sommes de contrôle sont identiques, cela signifie que les deux fichiers sont identiques.
 
+# Local.conf
+
+Ce script est destiné à être exécuté sur une machine virtuelle VMware ESXi. Il ajoute des lignes à la crontab pour planifier des tâches à exécuter périodiquement.
+
+Le commentaire en haut du script indique que les options de configuration locales ne doivent pas être modifiées car cela peut rendre le système instable.
+
+Le script utilise /etc/rc.local.d/local.sh pour ajouter les lignes à la crontab et redémarrer le service cron.
+
+Le texte ASCII est généré à partir du site https://patorjk.com/software/taag/#p=display&f=Big%20Money-nw&t=FOR%20EMERGENCY%20USING%20Ivrit%20FONT et affiche "FOR EMERGENCY USING Ivrit FONT".
+
+La ligne "/bin/kill $(cat /var/run/crond.pid)" arrête le service cron.
+
+La ligne "/bin/cat /scratch/addFQDNtoESXifirewall/crontab.exemple >> /var/spool/cron/crontabs/root" ajoute les lignes de la crontab à la crontab root.
+
+La ligne "/usr/lib/vmware/busybox/bin/busybox crond" redémarre le service cron.
+
+Enfin, le script se termine avec "exit 0".
