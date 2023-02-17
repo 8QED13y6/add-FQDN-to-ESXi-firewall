@@ -27,3 +27,16 @@ After the comments, the script kills the existing crontab process, adds some lin
 
 There are some additional comments at the end of the script with instructions on how to save and exit changes when using the vi or vim text editors.
 
+# Cron Exemple
+
+This line is a cron job that runs a shell script /scratch/addFQDNtoESXifirewall/execute.sh every minute.
+
+The command is structured as follows:
+
+*/1 - indicates that the job should be run every minute. This is equivalent to * * * * *, which means "run the job every minute of every hour of every day of the month of every month of every day of the week."
+
+/scratch/addFQDNtoESXifirewall/execute.sh - the path to the shell script that will be executed by the cron job.
+
+/scratch/addFQDNtoESXifirewall/Logs/execute_$(date '+%Y-%m-%d')/execute_$(date '+%H-%M-%S').log - redirects the output of the command to a log file that is named with the current date and time, down to the second.
+
+So, this cron job runs the /scratch/addFQDNtoESXifirewall/execute.sh script every minute, and writes the output to a new log file every time it runs.
