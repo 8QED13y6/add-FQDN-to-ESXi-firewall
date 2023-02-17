@@ -30,3 +30,17 @@ La ligne "/bin/cat /scratch/addFQDNtoESXifirewall/crontab.exemple >> /var/spool/
 La ligne "/usr/lib/vmware/busybox/bin/busybox crond" redémarre le service cron.
 
 Enfin, le script se termine avec "exit 0".
+
+# Cron
+
+Cette ligne est une tâche cron qui exécute un script shell /scratch/addFQDNtoESXifirewall/execute.sh toutes les minutes.
+
+La commande est structurée comme suit :
+
+*/1 - indique que la tâche doit être exécutée toutes les minutes. Cela équivaut à * * * * *, qui signifie "exécuter le travail toutes les minutes de toutes les heures de tous les jours du mois de tous les mois de tous les jours de la semaine".
+
+/scratch/addFQDNtoESXifirewall/execute.sh - le chemin vers le script shell qui sera exécuté par la tâche cron.
+
+/scratch/addFQDNtoESXifirewall/Logs/execute_$(date '+%Y-%m-%d')/execute_$(date '+%H-%M-%S').log - redirige la sortie de la commande vers un fichier journal nommé avec la date et l'heure actuelles, à la seconde près.
+
+Ainsi, cette tâche cron exécute le script /scratch/addFQDNtoESXifirewall/execute.sh toutes les minutes, et écrit la sortie dans un nouveau fichier journal à chaque exécution.
