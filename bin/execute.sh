@@ -67,11 +67,11 @@ firewall_ruleset_allowedip_list () {
                     echo "----------------------------------------------------------------------------"
                     echo ""
                     echo "esxcli network firewall ruleset allowedip $Action -i $allowedip -r=webAccess"
-                    #esxcli network firewall ruleset allowedip $Action -i $allowedip -r=webAccess
+                    esxcli network firewall ruleset allowedip $Action -i $allowedip -r=webAccess
                     echo "esxcli network firewall ruleset allowedip $Action -i $allowedip -r=vSphereClient"
-                    #esxcli network firewall ruleset allowedip $Action -i $allowedip -r=vSphereClient
+                    esxcli network firewall ruleset allowedip $Action -i $allowedip -r=vSphereClient
                     echo "esxcli network firewall ruleset allowedip $Action -i $allowedip -r=sshServer"
-                    #esxcli network firewall ruleset allowedip $Action -i $allowedip -r=sshServer
+                    esxcli network firewall ruleset allowedip $Action -i $allowedip -r=sshServer
                     echo ""
                     echo "----------------------------------------------------------------------------"
                     echo ""
@@ -120,8 +120,6 @@ IsTheNewListSameAsLastOne () {
         #On log les deux fichiers en un seul pour prouver la difference
         #This is just a log file to store the two content of ip.list andip.list.tmp
         CompareLogs "-----State eq same list----"
-        #On arete d'ecrire dans le fichier de log
-        #Il y a des changements il faut supprimer les anciennes ip
         firewall_ruleset_allowedip_list "$Path/ip.list" "Remove" #Ici on verifie si le fichier ip.list est vide ou non.Si il n'est pas vide il faut supprimer les ip qu'il contient des ruleset
         firewall_ruleset_allowedip_list "$Path/ip.list.tmp" "Add" #Ici on verifie si le fichier ip.list.tmp est vide ou non.Si il n'est pas vide il faut ajouter les ip qu'il contient aux ruleset
         echo  "Deleting $Path/ip.list"
