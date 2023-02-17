@@ -1,1 +1,60 @@
-###
+#!/bin/sh ++group=host/vim/vmvisor/boot
+
+# local configuration options
+
+# Note: modify at your own risk!  If you do/use anything in this
+# script that is not part of a stable API (relying on files to be in
+# specific places, specific tools, specific output, etc) there is a
+# possibility you will end up with a broken system after patching or
+# upgrading.  Changes are not supported unless under direction of
+# VMware support.
+
+#    ____   _____     _     ____   __  __  _____ 
+#   |  _ \ | ____|   / \   |  _ \ |  \/  || ____|
+#   | |_) ||  _|    / _ \  | | | || |\/| ||  _|  
+#   |  _ < | |___  / ___ \ | |_| || |  | || |___ 
+#   |_| \_\|_____|/_/   \_\|____/ |_|  |_||_____|
+#                                                
+#     |       |       |       |       |      |
+#     v       v       v       v       v      v
+
+#WE ARE USING /etc/rc.local.d/local.sh BECAUSE CRONTAB IS NOT A PERSISTANT FILE IN ESXI.
+#AT EVERY BOOT /etc/rc.local.d/local.sh is restored from a backup and executed
+#/etc/rc.local.d/local.sh ADD THE REQUIRED LINES TO CRONTAB AND REBOOT THE CRONTAB SERVICE
+# RUN THESE LINES WITHOUT THE "#" to make your changes take effect
+#/bin/sh /etc/rc.local.d/local.sh
+#/bin/auto-backup.sh 
+
+#Source of Text to ASCII  : https://patorjk.com/software/taag/#p=display&f=Big%20Money-nw&t=FOR%20EMERGENCY USING Ivrit FONT
+
+# Note: This script will not be run when UEFI secure boot is enabled.
+#DO NOT REMOVE THIS LINE BELOW
+/bin/kill $(cat /var/run/crond.pid)
+#DO NOT REMOVE THIS LINE ABOVE
+
+/bin/cat /scratch/ESXiFQDNFirewallRuleSet/crontab.exemple >> /var/spool/cron/crontabs/root
+
+# Note: This script will not be run when UEFI secure boot is enabled.
+
+#DO NOT REMOVE THESE LINES BELOW
+/usr/lib/vmware/busybox/bin/busybox crond
+exit 0
+#DO NOT REMOVE THESE LINES ABOVE
+#DO NOT ADD TEXT BELOW SINCE exit 0 IS ABOVE
+
+#    _____  _   _  ____  
+#   | ____|| \ | ||  _ \ 
+#   |  _|  |  \| || | | |
+#   | |___ | |\  || |_| |
+#   |_____||_| \_||____/ 
+#                        
+
+#    _   _                   _                                     __  _  _       
+#   | | | |  ___ __      __ | |_  ___    ___   __ _ __   __ ___   / _|(_)| |  ___ 
+#   | |_| | / _ \\ \ /\ / / | __|/ _ \  / __| / _` |\ \ / // _ \ | |_ | || | / _ \
+#   |  _  || (_) |\ V  V /  | |_| (_) | \__ \| (_| | \ V /|  __/ |  _|| || ||  __/
+#   |_| |_| \___/  \_/\_/    \__|\___/  |___/ \__,_|  \_/  \___| |_|  |_||_| \___|
+#                                                                      
+#REMEMBER IN VI / VIM TO EXIT AND SAVE PRESS ESC AND TYPE :wq!. If you haven't made any change PRESS ESC AND TYPE :q!.            
+
+
