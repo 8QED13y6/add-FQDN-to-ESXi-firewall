@@ -5,6 +5,8 @@ https://github.com/8QED13y6/add-FQDN-to-ESXi-firewall/edit/blob/LISMOI.md
 
 # ESXiFQDNFirewallRuleSet
 
+## Execute.sh
+
 This Bash script contains several functions that perform actions related to updating a list of IP addresses or FQDNs that are allowed to access various firewall rulesets on VMware ESXi hosts.
 
 The first function, IP_LIST_TMP_Updater, updates the ip.list.tmp file with new IP addresses or FQDNs from the source.list file. If the ip.list.tmp file exists due to an error, it is deleted. For each line in the source.list file, the function checks if it is a comment and then exports the IP address or FQDN. If the value is an FQDN, it uses nslookup to get the IP address. It then appends the IP address or FQDN to the ip.list.tmp file.
@@ -15,7 +17,7 @@ The third function, IsTheNewListSameAsLastOne, checks if the new list of IP addr
 
 Overall, this script appears to be designed to help automate the process of updating the IP address list for firewall rulesets on VMware ESXi hosts.
 
-# Local.conf
+## Local.conf
 
 This script is a shell script (using the /bin/sh interpreter) that appears to add some lines to the root user's crontab file and restart the crontab service.
 
@@ -27,7 +29,7 @@ After the comments, the script kills the existing crontab process, adds some lin
 
 There are some additional comments at the end of the script with instructions on how to save and exit changes when using the vi or vim text editors.
 
-# Cron Exemple
+## Cron Exemple
 
 This line is a cron job that runs a shell script /scratch/addFQDNtoESXifirewall/execute.sh every minute.
 
