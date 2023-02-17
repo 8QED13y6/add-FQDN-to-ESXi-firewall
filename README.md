@@ -1,7 +1,7 @@
 > **Note**
 > Link to the french version of readme bellow
 
-https://github.com/8QED13y6/add-FQDN-to-ESXi-firewall/edit/main/LISMOI.md
+https://github.com/8QED13y6/add-FQDN-to-ESXi-firewall/edit/blob/LISMOI.md
 
 # ESXiFQDNFirewallRuleSet
 
