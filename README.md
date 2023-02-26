@@ -9,6 +9,15 @@ Add esxi access to download by setting httpClient ruleset to true
 ```
 esxcli network firewall ruleset set -e true -r httpClient
 ```
+Create directories
+```
+mkdir -p /scratch/addFQDNtoESXifirewall/bin
+mkdir -p /scratch/addFQDNtoESXifirewall/sources/FQDN
+mkdir -p /scratch/addFQDNtoESXifirewall/sources/IP
+mkdir -p /scratch/addFQDNtoESXifirewall/Logs/FQDN
+mkdir -p /scratch/addFQDNtoESXifirewall/IP
+
+```
 Then download different bash script
 ```
 wget https://raw.githubusercontent.com/8QED13y6/add-FQDN-to-ESXi-firewall/main/bin/execute.sh -O /scratch/addFQDNtoESXifirewall/execute.sh --no-check-certificate
