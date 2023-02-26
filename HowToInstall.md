@@ -3,7 +3,7 @@
 
 First of all create the directory where files will be stored
 ```
-mkdir \scratch\ESXiFQDNFirewallRuleSet
+mkdir /scratch/addFQDNtoESXifirewall/
 ```
 Add esxi access to download by setting httpClient ruleset to true
 ```
