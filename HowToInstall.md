@@ -23,8 +23,8 @@ wget https://raw.githubusercontent.com/8QED13y6/add-FQDN-to-ESXi-firewall/main/b
 
 ```
 ```
-mv   /etc/rc.local.d/local.sh /etc/rc.local.d/local.sh.old #Check if persistant 
-cat   /scratch/addFQDNtoESXifirewall/local.conf >> /etc/rc.local.d/local.sh
+mv /etc/rc.local.d/local.sh /etc/rc.local.d/local.sh.old #Check if persistant 
+cat /scratch/addFQDNtoESXifirewall/local.conf >> /etc/rc.local.d/local.sh
 ```
 ```
 chmod +x /scratch/addFQDNtoESXifirewall/*.sh
