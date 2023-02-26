@@ -12,10 +12,15 @@ esxcli network firewall ruleset set -e true -r httpClient
 Then download different bash script
 ```
 wget https://raw.githubusercontent.com/8QED13y6/add-FQDN-to-ESXi-firewall/main/bin/execute.sh -O /scratch/addFQDNtoESXifirewall/execute.sh --no-check-certificate
+
 wget https://raw.githubusercontent.com/8QED13y6/add-FQDN-to-ESXi-firewall/main/bin/local.conf -O /scratch/addFQDNtoESXifirewall/local.conf --no-check-certificate
+
 wget https://raw.githubusercontent.com/8QED13y6/add-FQDN-to-ESXi-firewall/main/bin/fqdn.list -O /scratch/addFQDNtoESXifirewall/fqdn.list --no-check-certificate
+
 wget https://raw.githubusercontent.com/8QED13y6/add-FQDN-to-ESXi-firewall/main/bin/ip.list -O /scratch/addFQDNtoESXifirewall/ip.list --no-check-certificate
+
 wget https://raw.githubusercontent.com/8QED13y6/add-FQDN-to-ESXi-firewall/main/bin/crontab.exemple  -O /scratch/addFQDNtoESXifirewall/crontab.exemple --no-check-certificate
+
 ```
 ```
 mv   /etc/rc.local.d/local.sh /etc/rc.local.d/local.sh.old #Check if persistant 
