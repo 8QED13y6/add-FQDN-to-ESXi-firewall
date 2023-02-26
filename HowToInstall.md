@@ -7,26 +7,37 @@ mkdir \scratch\ESXiFQDNFirewallRuleSet
 ```
 Then download different bash script
 ```
-curl /scratch/git/install.sh
-curl /scratch/git/execute.sh
-curl /scratch/git/fqdn.list
-curl /scratch/git/ip.list
-curl /scratch/git/local.sh.exemple
+wget https://raw.githubusercontent.com/8QED13y6/add-FQDN-to-ESXi-firewall/main/bin/execute.sh -O /scratch/addFQDNtoESXifirewall/execute.sh --no-check-certificate
+wget https://raw.githubusercontent.com/8QED13y6/add-FQDN-to-ESXi-firewall/main/bin/local.conf -O /scratch/addFQDNtoESXifirewall/local.conf --no-check-certificate
+wget https://raw.githubusercontent.com/8QED13y6/add-FQDN-to-ESXi-firewall/main/bin/fqdn.list -O /scratch/addFQDNtoESXifirewall/fqdn.list --no-check-certificate
+wget https://raw.githubusercontent.com/8QED13y6/add-FQDN-to-ESXi-firewall/main/bin/ip.list -O /scratch/addFQDNtoESXifirewall/ip.list --no-check-certificate
+wget https://raw.githubusercontent.com/8QED13y6/add-FQDN-to-ESXi-firewall/main/bin/crontab.exemple  -O /scratch/addFQDNtoESXifirewall/crontab.exemple --no-check-certificate
 ```
 ```
 mv   /etc/rc.local.d/local.sh /etc/rc.local.d/local.sh.old #Check if persistant 
-cp   /etc/rc.local.d/local.sh.exemple /etc/rc.local.d/local.sh
+cat   /scratch/addFQDNtoESXifirewall/local.conf >> /etc/rc.local.d/local.sh
 ```
 ```
-chmod +x /scratch/git/*.sh
+chmod +x /scratch/addFQDNtoESXifirewall/*.sh
 chmod +x /etc/rc.local.d/local.sh
-/bin/bash /scratch/git/execute.sh >> ??
 ```
 Now edit the fqdn.list
 ```
-vi
+vi /scratch/addFQDNtoESXifirewall/fqdn.list
 ```
 Now edit the ip_source.list
 ```
-vi
+vi /scratch/addFQDNtoESXifirewall/ip.list
+```
+esxcli system syslog mark --message="addFQDNtoESXifirewall install.sh just ran!" 
+
+> **Note**
+If you want to compare attacks before and after installation run 
+```
+cat /var/log/vmkernel.log |grep -i mark:
+```
+These commands makes local.sh changes persistant
+```
+/bin/sh /etc/rc.local.d/local.sh
+/bin/auto-backup.sh 
 ```
