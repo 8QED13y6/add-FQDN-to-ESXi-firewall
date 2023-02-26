@@ -1,1 +1,50 @@
- ###
+### Do not edit text below, this is an example ###
+# Example
+# homesweethome.mydomain
+# work.mydomain
+# rescue.mydomain
+### Do not edit text above, this is an example ###
+#
+# Note
+# Remove one of the "#" below and add your IP.
+#
+# Usage
+# 1. Once the file opens, you will be in "command mode". This means that you cannot directly edit the text, but you can use keyboard commands to navigate and make changes to the file.
+# 2. To start editing, press the "i" key to enter "insert mode". You can now start typing your text.
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+# 3. To save your changes, press the "Esc" key to return to command mode, then type ":w" followed by the file name to save the changes. For example, ":w myfile.txt".
+# 4. To exit vi, type ":q" in command mode. If you have unsaved changes, you will be prompted to save them or discard them before exiting. To force quit without saving changes, type ":q!".
+# 5. If you want to save changes and exit at the same time, type ":wq" followed by the file name. For example, ":wq myfile.txt".
+#
+# These are the basic commands to get started with vi. There are many more advanced commands and features available in vi, but this should be enough to get you started.
