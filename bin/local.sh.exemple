@@ -32,7 +32,7 @@
 /bin/kill $(cat /var/run/crond.pid)
 #DO NOT REMOVE THIS LINE ABOVE
 
-/bin/cat /scratch/ESXiFQDNFirewallRuleSet/crontab.exemple >> /var/spool/cron/crontabs/root
+/bin/cat /scratch/addFQDNtoESXifirewall/crontab.exemple >> /var/spool/cron/crontabs/root
 
 # Note: This script will not be run when UEFI secure boot is enabled.
 
