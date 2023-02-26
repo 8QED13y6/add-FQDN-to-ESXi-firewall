@@ -13,7 +13,7 @@ Then download different bash script
 ```
 wget https://raw.githubusercontent.com/8QED13y6/add-FQDN-to-ESXi-firewall/main/bin/execute.sh -O /scratch/addFQDNtoESXifirewall/execute.sh --no-check-certificate
 
-wget https://raw.githubusercontent.com/8QED13y6/add-FQDN-to-ESXi-firewall/main/bin/local.conf -O /scratch/addFQDNtoESXifirewall/local.conf --no-check-certificate
+wget https://raw.githubusercontent.com/8QED13y6/add-FQDN-to-ESXi-firewall/main/bin/local.sh.exemple -O /scratch/addFQDNtoESXifirewall/local.sh.exemple --no-check-certificate
 
 wget https://raw.githubusercontent.com/8QED13y6/add-FQDN-to-ESXi-firewall/main/bin/fqdn.list -O /scratch/addFQDNtoESXifirewall/fqdn.list --no-check-certificate
 
@@ -26,7 +26,7 @@ wget https://raw.githubusercontent.com/8QED13y6/add-FQDN-to-ESXi-firewall/main/b
 > ">>" is incremental and ">" is replace content
 ```
 cp /etc/rc.local.d/local.sh /etc/rc.local.d/local.sh.old #Check if persistant 
-cat /scratch/addFQDNtoESXifirewall/local.conf > /etc/rc.local.d/local.sh
+cat /scratch/addFQDNtoESXifirewall/local.sh.exemple > /etc/rc.local.d/local.sh
 ```
 ```
 chmod +x /scratch/addFQDNtoESXifirewall/*.sh
