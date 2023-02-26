@@ -30,7 +30,6 @@ cat /scratch/addFQDNtoESXifirewall/local.sh.exemple > /etc/rc.local.d/local.sh
 ```
 ```
 chmod +x /scratch/addFQDNtoESXifirewall/*.sh
-chmod +x /etc/rc.local.d/local.sh
 ```
 Now edit the fqdn.list
 ```
@@ -44,17 +43,17 @@ Add a message to mark events before and after installation
 ```
 esxcli system syslog mark --message="addFQDNtoESXifirewall install.sh just ran!" 
 ```
-> **Note**
-If you want to compare attacks before and after installation run 
-```
-cat /var/log/vmkernel.log |grep -i mark:
-```
+
 These commands makes local.sh changes persistant
 ```
 /bin/sh /etc/rc.local.d/local.sh
 /bin/auto-backup.sh 
 ```
-
+> **Note**
+If you want to compare attacks before and after installation run 
+```
+cat /var/log/auth.log | grep -E 'Invalid user|addFQDNtoESXifirewall'
+```
 
 Delete esxi access to download by setting httpClient ruleset to false
 ```
