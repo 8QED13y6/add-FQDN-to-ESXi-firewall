@@ -24,11 +24,13 @@ wget https://raw.githubusercontent.com/8QED13y6/add-FQDN-to-ESXi-firewall/main/b
 
 wget https://raw.githubusercontent.com/8QED13y6/add-FQDN-to-ESXi-firewall/main/bin/local.sh.exemple -O /scratch/addFQDNtoESXifirewall/local.sh.exemple --no-check-certificate
 
-wget https://raw.githubusercontent.com/8QED13y6/add-FQDN-to-ESXi-firewall/main/bin/fqdn.list -O /scratch/addFQDNtoESXifirewall/fqdn.list --no-check-certificate
-
-wget https://raw.githubusercontent.com/8QED13y6/add-FQDN-to-ESXi-firewall/main/bin/ip.list -O /scratch/addFQDNtoESXifirewall/ip.list --no-check-certificate
-
 wget https://raw.githubusercontent.com/8QED13y6/add-FQDN-to-ESXi-firewall/main/bin/crontab.exemple  -O /scratch/addFQDNtoESXifirewall/crontab.exemple --no-check-certificate
+
+wget https://raw.githubusercontent.com/8QED13y6/add-FQDN-to-ESXi-firewall/main/sources/FQDN/source.list -O /scratch/addFQDNtoESXifirewall/main/sources/FQDN/source.list --no-check-certificate
+
+wget https://raw.githubusercontent.com/8QED13y6/add-FQDN-to-ESXi-firewall/main/sources/IP/source.list -O /scratch/addFQDNtoESXifirewall/ip.list --no-check-certificate
+
+
 
 ```
 > **Note**
