@@ -49,6 +49,10 @@ These commands makes local.sh changes persistant
 /bin/sh /etc/rc.local.d/local.sh
 /bin/auto-backup.sh 
 ```
+Add a message to mark events before and after installation
+```
+esxcli system syslog mark --message="addFQDNtoESXifirewall install.sh just ran!" 
+```
 > **Note**
 If you want to compare attacks before and after installation run 
 ```
