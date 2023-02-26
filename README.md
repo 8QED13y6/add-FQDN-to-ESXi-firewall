@@ -12,10 +12,10 @@ esxcli network firewall ruleset set -e true -r httpClient
 Create directories
 ```
 mkdir -p /scratch/addFQDNtoESXifirewall/bin
-mkdir -p /scratch/addFQDNtoESXifirewall/sources/FQDN
-mkdir -p /scratch/addFQDNtoESXifirewall/sources/IP
+mkdir -p /scratch/addFQDNtoESXifirewall/src/FQDN
+mkdir -p /scratch/addFQDNtoESXifirewall/src/IP
 mkdir -p /scratch/addFQDNtoESXifirewall/Logs/FQDN
-mkdir -p /scratch/addFQDNtoESXifirewall/IP
+mkdir -p /scratch/addFQDNtoESXifirewall/Logs/IP
 
 ```
 Then download different bash script
@@ -26,9 +26,9 @@ wget https://raw.githubusercontent.com/8QED13y6/add-FQDN-to-ESXi-firewall/main/b
 
 wget https://raw.githubusercontent.com/8QED13y6/add-FQDN-to-ESXi-firewall/main/bin/crontab.exemple  -O /scratch/addFQDNtoESXifirewall/crontab.exemple --no-check-certificate
 
-wget https://raw.githubusercontent.com/8QED13y6/add-FQDN-to-ESXi-firewall/main/sources/FQDN/source.list -O /scratch/addFQDNtoESXifirewall/main/sources/FQDN/source.list --no-check-certificate
+wget https://raw.githubusercontent.com/8QED13y6/add-FQDN-to-ESXi-firewall/main/src/FQDN/sources.list -O /scratch/addFQDNtoESXifirewall/src/FQDN/sources.list --no-check-certificate
 
-wget https://raw.githubusercontent.com/8QED13y6/add-FQDN-to-ESXi-firewall/main/sources/IP/source.list -O /scratch/addFQDNtoESXifirewall/ip.list --no-check-certificate
+wget https://raw.githubusercontent.com/8QED13y6/add-FQDN-to-ESXi-firewall/main/src/IP/sources.list -O /scratch/addFQDNtoESXifirewall/src/IP/sources.list --no-check-certificate
 
 
 
