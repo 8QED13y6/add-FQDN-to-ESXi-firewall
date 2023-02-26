@@ -1,22 +1,17 @@
 #How To Install
 
 
-First of all create the directory where files will be stored
-```
-mkdir /scratch/addFQDNtoESXifirewall/
-```
-Add esxi access to download by setting httpClient ruleset to true
-```
-esxcli network firewall ruleset set -e true -r httpClient
-```
-Create directories
+First of all create the directories where files will be stored
 ```
 mkdir -p /scratch/addFQDNtoESXifirewall/bin
 mkdir -p /scratch/addFQDNtoESXifirewall/src/FQDN
 mkdir -p /scratch/addFQDNtoESXifirewall/src/IP
 mkdir -p /scratch/addFQDNtoESXifirewall/Logs/FQDN
 mkdir -p /scratch/addFQDNtoESXifirewall/Logs/IP
-
+```
+Add esxi access to download by setting httpClient ruleset to true
+```
+esxcli network firewall ruleset set -e true -r httpClient
 ```
 Then download different bash script
 ```
@@ -29,8 +24,6 @@ wget https://raw.githubusercontent.com/8QED13y6/add-FQDN-to-ESXi-firewall/main/b
 wget https://raw.githubusercontent.com/8QED13y6/add-FQDN-to-ESXi-firewall/main/src/FQDN/sources.list -O /scratch/addFQDNtoESXifirewall/src/FQDN/sources.list --no-check-certificate
 
 wget https://raw.githubusercontent.com/8QED13y6/add-FQDN-to-ESXi-firewall/main/src/IP/sources.list -O /scratch/addFQDNtoESXifirewall/src/IP/sources.list --no-check-certificate
-
-
 
 ```
 > **Note**
