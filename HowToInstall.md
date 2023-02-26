@@ -29,8 +29,10 @@ Now edit the ip_source.list
 ```
 vi /scratch/addFQDNtoESXifirewall/ip.list
 ```
+Add a message to mark events before and after installation
+```
 esxcli system syslog mark --message="addFQDNtoESXifirewall install.sh just ran!" 
-
+```
 > **Note**
 If you want to compare attacks before and after installation run 
 ```
