@@ -9,5 +9,5 @@
 # |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
 # |  |  |  |  |
 # *  *  *  *  * user-name command-to-be-executed
-
-*/1  *  *  *  *   /scratch/addFQDNtoESXifirewall/bin/execute.sh > /scratch/addFQDNtoESXifirewall/logs/execute_$(date '+%Y-%m-%d')/execute_$(date '+%H-%M-%S').log
+59   0  *  *  * mkdir -p /scratch/addFQDNtoESXifirewall/logs/execute_$(date '+%Y-%m-')$(awk "BEGIN {print $(date '+%d')+1; exit}")/
+*/1  *  *  *  * /scratch/addFQDNtoESXifirewall/bin/execute.sh > /scratch/addFQDNtoESXifirewall/logs/execute_$(date '+%Y-%m-%d')/execute_$(date '+%H-%M-%S').log
