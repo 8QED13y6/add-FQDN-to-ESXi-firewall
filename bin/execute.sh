@@ -97,10 +97,10 @@ IsTheNewListSameAsLastOne () {
     Date=$(date '+%Y-%m-%d_%H-%M-%S')
     Path="/scratch/ESXiFQDNFirewallRuleSet/src/$Value"
     #DebugeOnly echo "The path is /scratch/ESXiFQDNFirewallRuleSet/src/$Value"
-    LogsPath="/scratch/ESXiFQDNFirewallRuleSet/Logs/$Value/MergeOfIPList_$Date.log"
+    LogsPath="/scratch/ESXiFQDNFirewallRuleSet/logs/$Value/MergeOfIPList_$Date.log"
     echo ""
     echo ##############LogsPath###############################################################
-    echo "The LogsPath is /scratch/ESXiFQDNFirewallRuleSet/Logs/$Value/MergeOfIPList_$Date.log"
+    echo "The LogsPath is /scratch/ESXiFQDNFirewallRuleSet/logs/$Value/MergeOfIPList_$Date.log"
     echo ##############LogsPath###############################################################
     echo ""
     #Start
