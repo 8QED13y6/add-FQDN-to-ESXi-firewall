@@ -43,10 +43,6 @@ Now edit the ip_source.list
 ```
 vi /scratch/addFQDNtoESXifirewall/src/IP/sources.list
 ```
-Add a message to mark events before and after installation
-```
-esxcli system syslog mark --message="addFQDNtoESXifirewall install.sh just ran!" 
-```
 
 These commands makes local.sh changes persistant
 ```
