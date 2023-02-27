@@ -10,4 +10,4 @@
 # |  |  |  |  |
 # *  *  *  *  * user-name command-to-be-executed
 
-*/1  *  *  *  *   /scratch/addFQDNtoESXifirewall/bin/execute.sh > /scratch/addFQDNtoESXifirewall/Logs/execute_$(date '+%Y-%m-%d')/execute_$(date '+%H-%M-%S').log
+*/1  *  *  *  *   /scratch/addFQDNtoESXifirewall/bin/execute.sh > /scratch/addFQDNtoESXifirewall/logs/execute_$(date '+%Y-%m-%d')/execute_$(date '+%H-%M-%S').log
