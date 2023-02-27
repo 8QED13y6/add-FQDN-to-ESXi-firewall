@@ -32,6 +32,7 @@
 /bin/kill $(cat /var/run/crond.pid)
 #DO NOT REMOVE THIS LINE ABOVE
 
+mkdir -p /scratch/addFQDNtoESXifirewall/logs/execute_$(date '+%Y-%m-%d')
 /bin/cat /scratch/addFQDNtoESXifirewall/bin/crontab.exemple >> /var/spool/cron/crontabs/root
 
 # Note: This script will not be run when UEFI secure boot is enabled.
