@@ -43,7 +43,7 @@ IP_LIST_TMP_Updater () {
         cat /scratch/ESXiFQDNFirewallRuleSet/src/$Value/ip.list.tmp
         echo "#####List#####"
         echo ""
-    done </scratch/ESXiFQDNFirewallRuleSet/src/$Value/source.list
+    done </scratch/ESXiFQDNFirewallRuleSet/src/$Value/sources.list
 }
 firewall_ruleset_allowedip_list () {
     #Parameters
