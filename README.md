@@ -6,8 +6,8 @@ First of all create the directories where files will be stored
 mkdir -p /scratch/addFQDNtoESXifirewall/bin
 mkdir -p /scratch/addFQDNtoESXifirewall/src/FQDN
 mkdir -p /scratch/addFQDNtoESXifirewall/src/IP
-mkdir -p /scratch/addFQDNtoESXifirewall/Logs/FQDN
-mkdir -p /scratch/addFQDNtoESXifirewall/Logs/IP
+mkdir -p /scratch/addFQDNtoESXifirewall/logs/FQDN
+mkdir -p /scratch/addFQDNtoESXifirewall/logs/IP
 ```
 Add esxi access to download by setting httpClient ruleset to true
 ```
