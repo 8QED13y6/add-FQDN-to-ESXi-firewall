@@ -1,4 +1,4 @@
-#Source : https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.security.doc/GUID-7A8BEFC8-BF86-49B5-AE2D-E400AAD81BA3.html
+#Sources : https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.security.doc/GUID-7A8BEFC8-BF86-49B5-AE2D-E400AAD81BA3.html
 #Functions
 IP_LIST_TMP_Updater () {
     #Parameters
@@ -6,7 +6,7 @@ IP_LIST_TMP_Updater () {
     #Start
     #------------------------------------------------------------------------------------
     # If the last tmp file still exist because of an error we delete it. With no output.
-    rm /scratch/ESXiFQDNFirewallRuleSet/src/$Value/ip.list.tmp >/dev/null 2<&1
+    rm /scratch/addFQDNtoESXifirewall/src/$Value/ip.list.tmp >/dev/null 2<&1
     #------------------------------------------------------------------------------------
     while read IP_OR_FQDN; do #Foreach line in the file
         echo "-------------------------------------------"
@@ -28,7 +28,7 @@ IP_LIST_TMP_Updater () {
                 echo "IP equals $IP_OR_FQDN_Export"
             fi
             
-            echo "$IP_OR_FQDN_Export" >> /scratch/ESXiFQDNFirewallRuleSet/src/$Value/ip.list.tmp
+            echo "$IP_OR_FQDN_Export" >> /scratch/addFQDNtoESXifirewall/src/$Value/ip.list.tmp
         else
             echo "$IP_OR_FQDN is not an IP OR FQDN"
         fi
@@ -40,10 +40,10 @@ IP_LIST_TMP_Updater () {
         echo "Here is the temp list"    
         echo ""
         echo "#####List#####"
-        cat /scratch/ESXiFQDNFirewallRuleSet/src/$Value/ip.list.tmp
+        cat /scratch/addFQDNtoESXifirewall/src/$Value/ip.list.tmp
         echo "#####List#####"
         echo ""
-    done </scratch/ESXiFQDNFirewallRuleSet/src/$Value/sources.list
+    done </scratch/addFQDNtoESXifirewall/src/$Value/sources.list
 }
 firewall_ruleset_allowedip_list () {
     #Parameters
@@ -95,12 +95,12 @@ IsTheNewListSameAsLastOne () {
 
     #Var
     Date=$(date '+%Y-%m-%d_%H-%M-%S')
-    Path="/scratch/ESXiFQDNFirewallRuleSet/src/$Value"
-    #DebugeOnly echo "The path is /scratch/ESXiFQDNFirewallRuleSet/src/$Value"
-    LogsPath="/scratch/ESXiFQDNFirewallRuleSet/logs/$Value/MergeOfIPList_$Date.log"
+    Path="/scratch/addFQDNtoESXifirewall/src/$Value"
+    #DebugeOnly echo "The path is /scratch/addFQDNtoESXifirewall/src/$Value"
+    LogsPath="/scratch/addFQDNtoESXifirewall/logs/$Value/MergeOfIPList_$Date.log"
     echo ""
     echo ##############LogsPath###############################################################
-    echo "The LogsPath is /scratch/ESXiFQDNFirewallRuleSet/logs/$Value/MergeOfIPList_$Date.log"
+    echo "The LogsPath is /scratch/addFQDNtoESXifirewall/logs/$Value/MergeOfIPList_$Date.log"
     echo ##############LogsPath###############################################################
     echo ""
     #Start
@@ -118,7 +118,7 @@ IsTheNewListSameAsLastOne () {
     else
         echo "Files are not the same"
         #On log les deux fichiers en un seul pour prouver la difference
-        #This is just a log file to store the two content of ip.list andip.list.tmp
+        #This is just a log file to store the two content of ip.list and ip.list.tmp
         CompareLogs "-----State eq same list----"
         firewall_ruleset_allowedip_list "$Path/ip.list" "Remove" #Ici on verifie si le fichier ip.list est vide ou non.Si il n'est pas vide il faut supprimer les ip qu'il contient des ruleset
         firewall_ruleset_allowedip_list "$Path/ip.list.tmp" "Add" #Ici on verifie si le fichier ip.list.tmp est vide ou non.Si il n'est pas vide il faut ajouter les ip qu'il contient aux ruleset
@@ -179,8 +179,8 @@ firewall_ruleset_allowed_all () {
 IP_LIST_TMP_Updater "FQDN"
 IP_LIST_TMP_Updater "IP"
 
-FQDN_TMP="/scratch/ESXiFQDNFirewallRuleSet/src/FQDN/ip.list.tmp"
-IP_TMP="/scratch/ESXiFQDNFirewallRuleSet/src/IP/ip.list.tmp"
+FQDN_TMP="/scratch/addFQDNtoESXifirewall/src/FQDN/ip.list.tmp"
+IP_TMP="/scratch/addFQDNtoESXifirewall/src/IP/ip.list.tmp"
 
 #Check if both tmp files are empty
 if [ -f "$FQDN_TMP" -o -f "$IP_TMP" ];then
@@ -193,8 +193,8 @@ if [ -f "$FQDN_TMP" -o -f "$IP_TMP" ];then
         firewall_ruleset_allowed_all FALSE
     else
         echo "File $FQDN_TMP AND/OR $IP_TMP are empty." #If yes Allow all
-        firewall_ruleset_allowedip_list "/scratch/ESXiFQDNFirewallRuleSet/src/FQDN/ip.list" "Remove"
-        firewall_ruleset_allowedip_list "/scratch/ESXiFQDNFirewallRuleSet/src/IP/ip.list" "Remove"
+        firewall_ruleset_allowedip_list "/scratch/addFQDNtoESXifirewall/src/FQDN/ip.list" "Remove"
+        firewall_ruleset_allowedip_list "/scratch/addFQDNtoESXifirewall/src/IP/ip.list" "Remove"
         firewall_ruleset_allowed_all TRUE
 
     fi
